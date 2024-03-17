@@ -1,0 +1,156 @@
+/* .star1{
+
+  flex-wrap: nowrap;
+  width: 35px;
+  height: 30px;
+}
+.star {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  color: #ffd700;
+  position: relative;
+  margin-right: 3px;
+}
+.sstar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+} */
+
+/*
+body {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.recipe-details {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 50px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.stars {
+  color: gold;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+} */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.recipe-details {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  max-width: 90%; /* עיצוב נוסף - הגבולות של העמוד */
+  width: 100%; /* עיצוב נוסף - רוחב מלא */
+  text-align: center; /* עיצוב נוסף - מרכז תוכן */
+  margin: auto; /* עיצוב נוסף - מרכז העמוד באופן אוטומטי */
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #007bff; /* עיצוב נוסף - צבע טקסט */
+}
+
+.description {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #6c757d; /* עיצוב נוסף - צבע טקסט */
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.rating {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.stars {
+  color: gold;
+}
+
+.star {
+  font-size: 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.ingredients-list,
+.preparation-steps {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.ingredient,
+.step {
+  margin-bottom: 10px;
+  color: #6c757d; /* עיצוב נוסף - צבע טקסט */
+}
+
+.recipe-image {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.btn {
+  display: inline-block; /* עיצוב נוסף - כפתורים נמצאים בשורה אחת */
+  padding: 10px 20px; /* עיצוב נוסף - גודל כפתורים */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px; /* עיצוב נוסף - מרווח בין כפתורים */
+  background-color: #007bff; /* עיצוב נוסף - צבע רקע */
+  color: #fff; /* עיצוב נוסף - צבע טקסט */
+}
+
+.delete-btn {
+  background-color: #dc3545; /* עיצוב נוסף - צבע רקע */
+}

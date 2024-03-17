@@ -1,0 +1,37 @@
+
+    <!-- <div *ngIf="recipee" (click)="recipeDetails()" class="container">
+      <h1 >{{recipee.recipe_name}}</h1>
+      <p>time prefition: {{recipee.preparation_time_in_minutes|myTime}}</p>
+     <div class="sstar"> <div   *ngFor="let i of getRange(recipee.difficulty_level_1_5)" >
+        <img  class="star" src="https://publicdomainvectors.org/tn_img/3DSegmentedStarYellow.webp" alt="star" >
+      </div>
+    </div>
+  <img src="{{recipee.image}}" alt="{{recipee.image}}">
+  </div> -->
+
+  <div *ngIf="recipee" (click)="recipeDetails()" class="recipe-container">
+    <h1>{{ recipee.recipe_name }}</h1>
+    <p>זמן ההכנה: {{ recipee.preparation_time_in_minutes | myTime }}</p>
+    <div class="stars">
+      <div *ngFor="let i of getRange(recipee.difficulty_level_1_5)">
+        <img class="star" src="https://publicdomainvectors.org/tn_img/3DSegmentedStarYellow.webp" alt="star">
+      </div>
+    </div>
+    <img class="img1" src="{{ recipee.image }}" alt="{{ recipee.recipe_name }}">
+  </div>
+
+  <!-- <div *ngIf="recipee" (click)="recipeDetails()" class="recipe-container">
+    <h1>{{ recipee.recipe_name }}</h1>
+    <p>זמן ההכנה: {{ recipee.preparation_time_in_minutes | myTime }}</p>
+    <div class="stars">
+      <div *ngFor="let i of getRange(recipee.difficulty_level_1_5)">
+        <img class="star" src="https://publicdomainvectors.org/tn_img/3DSegmentedStarYellow.webp" alt="star">
+      </div>
+    </div>
+    <img src="{{ recipee.image }}" alt="{{ recipee.recipe_name }}">
+  </div> -->
+  <!-- <ng-template #noToProvider>
+      <div style="color: red;">
+      </div>
+  </ng-template> -->
+<!-- </ng-container> -->

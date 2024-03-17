@@ -1,0 +1,17 @@
+<!-- <div class="container" >
+  <div *ngFor="let recipe of recipeList" style="width: 18rem;" >
+  <app-small-recipe [recipee]="recipe"></app-small-recipe>
+</div>
+<button (click)="add()">להוספת מתכון חדש</button>
+</div> -->
+
+
+
+<div class="container">
+  <div class="grid">
+    <ng-container *ngFor="let recipe of recipeList">
+      <app-small-recipe [recipee]="recipe"></app-small-recipe>
+    </ng-container>
+  </div>
+  <button (click)="add()">להוספת מתכון חדש</button>
+</div>

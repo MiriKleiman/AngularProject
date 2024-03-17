@@ -1,0 +1,21 @@
+
+
+<!-- <div *ngIf="!response"  [formGroup]="UserDetailsForm">
+  <p *ngIf="cnt>0">הכנס סיסמא שוב</p>
+  <input type="text" formControlName="userName" placeholder="username" > -->
+
+
+<!--
+  <input type="text" formControlName="password" placeholder="password">
+  <button type="submit" (click)="login()">login</button>
+</div> -->
+
+<div class="login-container">
+  <div class="login-form" [formGroup]="UserDetailsForm">
+    <p *ngIf="cnt > 0">הכנס סיסמא שוב</p>
+    <input type="text" formControlName="userName" placeholder="שם משתמש">
+    <input type="password" formControlName="password" placeholder="סיסמה">
+    <button type="submit" (click)="login()">התחברות</button>
+  </div>
+</div>
+

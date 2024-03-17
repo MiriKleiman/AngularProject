@@ -1,0 +1,102 @@
+<!-- <div [formGroup]="DetailsForm">
+  <input type="text"  formControlName="image" placeholder="image">
+  <input type="text" formControlName="recipe_name" placeholder="Recipe_name">
+  <input type="number" formControlName="preparation_time_in_minutes" placeholder="Preparation_time_in_minutes">
+  <input type="number" formControlName="difficulty_level_1_5" placeholder="Difficulty_level_1_5">
+  <input type="date" formControlName="the_date_the_recipe_was_added_to_the_website" placeholder="date">
+  <input type="text" formControlName="User_code_that_entered_the_recipe.userName" placeholder="yourName"  >
+
+
+  <ng-container *ngIf="this.DetailsForm.controls['difficulty_level_1_5'].errors as idError">
+    <p *ngIf="idError['min']">this field is must at least 1</p>
+    <p *ngIf="idError['max']">this field is must at most 5</p>
+</ng-container>
+
+
+  <br/>
+  <select formControlName="category_code">
+    <option *ngFor="let category of category" [value]="category.id">
+        <h1>{{category.name}} </h1>
+    </option>
+</select> <br><br>
+
+<ng-container formArrayName="preparation">
+      <ng-container *ngFor="let item of preparation.controls; let i = index">
+        <div>
+          <input id="name" type="text" [formControlName]="i" />
+          <button type="button" (click)="removePreparation(i)">
+            מחיקה
+          </button>
+        </div>
+      </ng-container>
+    </ng-container>
+    <button type="button" (click)="addNewPreparation()">הוספת רכיב</button>
+
+    <ng-container formArrayName="the_list_of_components">
+      <ng-container *ngFor="let item of the_list_of_components.controls; let i = index">
+        <div>
+          <input id="name" type="text" [formControlName]="i" />
+          <button type="button" (click)="removecomponent(i)">
+            מחק ערך
+          </button>
+        </div>
+      </ng-container>
+    </ng-container>
+    <button type="button" (click)="addNewcomponent()">הוספת ערך</button>
+</div>
+      <button (click)="addRecipe1()"> להוספת המתכון</button>
+ -->
+
+
+ <div class="container">
+  <form [formGroup]="DetailsForm" class="recipe-form">
+    <h1>הוספת מתכון חדש</h1>
+    <div class="form-group">
+      <input type="text" formControlName="image" placeholder="תמונה" class="form-control">
+      <input type="text" formControlName="recipe_name" placeholder="שם המתכון" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="number" formControlName="preparation_time_in_minutes" placeholder="זמן הכנה (בדקות)" class="form-control">
+      <input type="number" formControlName="difficulty_level_1_5" placeholder="רמת קושי (בין 1 ל-5)" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="date" formControlName="the_date_the_recipe_was_added_to_the_website" placeholder="תאריך הוספת המתכון לאתר" class="form-control">
+      <input type="text" formControlName="User_code_that_entered_the_recipe.userName" placeholder="שם משתמש שהכניס את המתכון" class="form-control">
+    </div>
+
+    <ng-container *ngIf="this.DetailsForm.controls['difficulty_level_1_5'].errors as idError">
+      <p *ngIf="idError['min']" class="error-message">שדה זה חייב להיות לפחות 1</p>
+      <p *ngIf="idError['max']" class="error-message">שדה זה חייב להיות לכל היותר 5</p>
+    </ng-container>
+
+    <div class="form-group">
+      <select formControlName="category_code" class="form-control">
+        <option *ngFor="let category of category" [value]="category.id">{{ category.name }}</option>
+      </select>
+    </div>
+
+    <div formArrayName="preparation" class="dynamic-form">
+      <div *ngFor="let item of preparation.controls; let i = index" class="form-group">
+        <input type="text" [formControlName]="i" placeholder="שלב {{ i + 1 }}" class="form-control" />
+        <button type="button" class="btn btn-danger btn-sm" (click)="removePreparation(i)">
+          מחיקה
+        </button>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-success btn-lg" (click)="addNewPreparation()">הוספת שלב חדש</button>
+
+    <div formArrayName="the_list_of_components" class="dynamic-form">
+      <div *ngFor="let item of the_list_of_components.controls; let i = index" class="form-group">
+        <input type="text" [formControlName]="i" placeholder="רכיב {{ i + 1 }}" class="form-control" />
+        <button type="button" class="btn btn-danger btn-lg" (click)="removecomponent(i)">
+          מחק ערך
+        </button>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-success btn-lg" (click)="addNewcomponent()">הוספת רכיב חדש</button>
+
+    <button class="btn btn-primary btn-lg" (click)="addRecipe1()"> להוספת המתכון</button>
+  </form>
+</div>

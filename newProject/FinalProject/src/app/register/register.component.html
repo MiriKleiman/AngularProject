@@ -1,0 +1,31 @@
+<!-- <p *ngIf="reg">משתמש לא רשום בבקשה הרשם</p>
+<div *ngIf="response">
+  <p>המשתמש כבר קיים!</p>
+</div>
+<div [formGroup]="DetailsForm">
+  <input type="text" formControlName="userName" placeholder="userName" >
+  <input type="text" formControlName="adress" placeholder="adress">
+  <input type="text" formControlName="email" placeholder="email">
+  <ng-container *ngIf=" this.DetailsForm.controls['email'].errors as idError  ">
+    <p *ngIf="idError['minlength']" > this field is must at least 11 digits</p>
+</ng-container>
+  <input type="password" formControlName="password" placeholder="password">
+  <button type="submit" (click)="register()">הרשם</button>
+</div> -->
+
+<div class="register-container">
+  <p *ngIf="reg">משתמש לא רשום בבקשה הרשם</p>
+  <div *ngIf="response">
+    <p>המשתמש כבר קיים!</p>
+  </div>
+  <div [formGroup]="DetailsForm" class="form">
+    <input type="text" formControlName="userName" placeholder="שם משתמש">
+    <input type="text" formControlName="adress" placeholder="כתובת">
+    <input type="text" formControlName="email" placeholder="דואר אלקטרוני">
+    <ng-container *ngIf="this.DetailsForm.controls['email'].errors as idError">
+      <p *ngIf="idError['minlength']">הדואר האלקטרוני חייב להיות באורך של לפחות 11 תווים</p>
+    </ng-container>
+    <input type="password" formControlName="password" placeholder="סיסמה">
+    <button type="submit" (click)="register()">הרשם</button>
+  </div>
+</div>
