@@ -1,17 +1,17 @@
-<!-- <p>edit-recipe works!</p> -->
-<div [formGroup]="DetailsForm">
-  <!-- <input type="text" formControlName="recipe_code" value="{{edit.recipe_code}}" placeholder="{{edit.recipe_code}}" ><br> -->
-  <!-- <ng-container *ngIf="this.DetailsForm.controls['recipe_code'].errors as idError"> -->
-    <!-- <p appHightLight *ngIf="idError['required']">this field is must!</p> -->
-    <!-- <p *ngIf="idError['minlength']">this field is must at least 9 digits</p> -->
-  <!-- </ng-container> -->
+<div class="input-container">
+  <h1 class="h11">עדכון מתכון</h1>
+<div class="container" [formGroup]="DetailsForm">
+  <label>תמונה</label>
+  <input class="form-control" type="text" formControlName="image"  ><br>
+  <label>שם מתכון</label>
+  <input class="form-control" type="text" formControlName="recipe_name" ><br>
+  <label>זמן הכנה בדקות</label>
 
-  <input type="text" formControlName="image"  ><br>
-  <input type="text" formControlName="recipe_name" ><br>
-  <input type="text" formControlName="preparation_time_in_minutes"><br>
-  <input type="text" formControlName="difficulty_level_1_5" ><br>
+  <input class="form-control" type="number" formControlName="preparation_time_in_minutes"><br>
+  <label>דירוג מ 1-5</label>
+
+  <input class="form-control" type="number" formControlName="difficulty_level_1_5" ><br>
   <ng-container *ngIf="DetailsForm.controls['Difficulty_level_1_5']?.errors as idError">
-    <!-- <p appHightLight *ngIf="idError['required']">this field is must!</p> -->
     <p *ngIf="idError['min']">this field is must at least 1</p>
     <p *ngIf="idError['max']">this field is must at most 5</p>
 </ng-container>
@@ -19,27 +19,50 @@
 <ng-container formArrayName="preparation">
   <ng-container *ngFor="let item of preparation.controls; let i = index">
     <div>
-      <input id="name" type="text" [formControlName]="i" />
-      <button type="button" (click)="removePreparation(i)">
-        מחיקה
+  <label>רכיבים</label>
+
+      <input class="form-control" id="name" type="text" [formControlName]="i" />
+      <button class="form2-control" type="button" (click)="removePreparation(i)">
+       מחיקת רכיב
       </button>
     </div>
   </ng-container>
-</ng-container>
-<button type="button" (click)="addNewPreparation()">הוספת רכיב</button>
-
+</ng-container><br>
+<button class="form2-control" type="button" (click)="addNewPreparation()">הוספת רכיב</button><br>
+<br>
 <ng-container formArrayName="the_list_of_components">
   <ng-container *ngFor="let item of the_list_of_components.controls; let i = index">
     <div>
-      <input id="name" type="text" [formControlName]="i" />
-      <button type="button" (click)="removePreparation(i)">
-        מחיקה
+  <label>אופן ההכנה </label>
+
+      <input class="form-control" id="name" type="text" [formControlName]="i" />
+      <button class="form2-control" type="button" (click)="removeComponent(i)">
+        מחיקת אופן ההכנה
       </button>
     </div>
   </ng-container>
-</ng-container>
-<button type="button" (click)="addNewPreparation()">הוספת רכיב</button>
-<div ></div>
+</ng-container><br>
+<button class="form2-control" type="button" (click)="addNewComponent()">הוספת אופן ההכנה</button><br>
+<div ></div><br>
+<button class="form3" (click)="keep()">שמירה</button>
+<button class="form4" (click)="cancel()">ביטול</button>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- <h3>Ingredients:</h3>
             <ul>
                 <li *ngFor="let ingredient of recipe.the_list_of_components">
@@ -52,6 +75,4 @@
                 <li *ngFor="let step of recipe.preparation">{{ step }}</li>
             </ol> -->
         <!-- </div> -->
-<button (click)="keep()">keep</button>
-<button (click)="cancel()">cancel</button>
-</div>
+

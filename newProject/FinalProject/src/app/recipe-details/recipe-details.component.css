@@ -1,156 +1,117 @@
-/* .star1{
-
-  flex-wrap: nowrap;
-  width: 35px;
-  height: 30px;
-}
-.star {
-  display: flex;
-  flex-direction: row;
-  font-size: 20px;
-  color: #ffd700;
-  position: relative;
-  margin-right: 3px;
-}
-.sstar {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
-} */
-
-/*
-body {
-  background-color: #f8f9fa;
-  color: #212529;
+.container {
+  text-align: center;
+  /* overflow: scroll; */
 }
 
 .recipe-details {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
-  padding: 30px;
   margin-top: 50px;
 }
 
-.icon {
-  width: 30px;
-  height: 30px;
-  margin-left: 10px;
-}
-
-.stars {
-  color: gold;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.btn-danger {
-  background-color: #dc3545;
-  border-color: #dc3545;
-} */
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  color: #212529;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
+.header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100vh;
 }
 
-.recipe-details {
-  background-color: #fff;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
-  max-width: 90%; /* עיצוב נוסף - הגבולות של העמוד */
-  width: 100%; /* עיצוב נוסף - רוחב מלא */
-  text-align: center; /* עיצוב נוסף - מרכז תוכן */
-  margin: auto; /* עיצוב נוסף - מרכז העמוד באופן אוטומטי */
-}
-
-.title {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #007bff; /* עיצוב נוסף - צבע טקסט */
-}
-
-.description {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #6c757d; /* עיצוב נוסף - צבע טקסט */
+.icon-container {
+  display: flex;
+  position: fixed;
+  top: 2%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  height: auto;
+  z-index: 9999;
 }
 
 .icon {
-  width: 30px;
-  height: 30px;
-  vertical-align: middle;
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
   margin-left: 10px;
+  border-radius: 50%; /* עיגול כל הצדדים של התמונה */
+  overflow: hidden; /* כדי להסתיר חלקים של התמונה שאינם חלק מהעיגול */
 }
 
-.rating {
-  margin-bottom: 20px;
+.info {
+  margin-top: 20px;
 }
 
-.label {
-  font-weight: bold;
+.difficulty {
+  position: fixed;
+  top: 14%;
+  right: 52%;
+  transform: translate(50%, 50%);
+  width: 200px;
+  height: auto;
+  z-index: 9999;
 }
 
 .stars {
   color: gold;
+  height: 30px;
+  width: 200px;
+  display: flex;
+  top: 5%;
+   margin-left: 40%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* או אורך תמונה מינימלי של 200px */
+  grid-gap: 10px; /* מרווח בין התמונות */
+}
+.star{
+  height: 50px;
+  width: auto;
+}
+.preparation{
+  direction: rtl;
+  position: fixed;
+  top: 70px; /* שינוי המרחק מהקצה העליון של העמוד */
+  left: 80px; /* שינוי המרחק מהקצה הימני של העמוד */
+  width: 300px;
+  height: auto;
+  z-index: 9999;
 }
 
-.star {
-  font-size: 20px;
+.ingredients{
+  direction: rtl;
+  position: fixed; /* מיקום קבוע בראש העמוד */
+  top: 70px; /* מרחק מהקצה העליון של העמוד */
+  right: 100px; /* מרחק מהקצה הימני של העמוד */
+  width: 200px; /* רוחב התמונה */
+  height: auto; /* גובה אוטומטי כדי לשמור על היחסיות */
+  z-index: 9999; /* העמקת התמונה מעל תוכן אחר */
 }
 
-.section-title {
-  font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
+.big-image {
+  float: center; /* העמקת התמונה לימין */
+  margin-top: 50px;
+  /* margin-left: ; */
 
-.ingredients-list,
-.preparation-steps {
-  list-style-type: none;
-  padding-left: 0;
+  width: 600px; /* רוחב התמונה */
+  height: auto; /* גובה אוטומטי כדי לשמור על היחסיות */
 }
-
-.ingredient,
-.step {
-  margin-bottom: 10px;
-  color: #6c757d; /* עיצוב נוסף - צבע טקסט */
+.btn-btn-primary{
+margin: 40px;
 }
-
-.recipe-image {
-  display: block;
-  margin: 20px auto;
-  max-width: 100%;
-  border-radius: 10px;
+.btn-btn-danger{
+  margin: 40px;
 }
-
-.btn {
-  display: inline-block; /* עיצוב נוסף - כפתורים נמצאים בשורה אחת */
-  padding: 10px 20px; /* עיצוב נוסף - גודל כפתורים */
+button {
+  background-color: #4CAF50;
+  color: white;
   border: none;
-  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
   cursor: pointer;
-  margin: 10px; /* עיצוב נוסף - מרווח בין כפתורים */
-  background-color: #007bff; /* עיצוב נוסף - צבע רקע */
-  color: #fff; /* עיצוב נוסף - צבע טקסט */
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.delete-btn {
-  background-color: #dc3545; /* עיצוב נוסף - צבע רקע */
+button:hover {
+  background-color: #45a049;
+}
+.image-container{
+margin-left: 2px;
 }

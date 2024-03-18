@@ -1,0 +1,58 @@
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* מרווח בין ה-inputs */
+  background-image: url('https://market50.b-cdn.net/salsela/uploads/Salsila_sliderMobile.jpg'); /* קישור לתמונת רקע */
+  background-size: cover; /* מתאים את התמונה לגודל של ה-container */
+  padding: 20px; /* padding ל-container */
+  border-radius: 10px; /* radius לפינות */
+}
+
+.input-container input {
+  width: 50%; /* כאן אנו משנים את רוחב ה-input ל-80% מרוחב ה-container */
+  margin-right: 10px; /* מרווח מימין של ה-input */
+  margin: 0 auto; /* מרכז את ה-input במרכז ה-container */
+  /* width: 100%; */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.h11{
+ margin-left: 43%;
+}
+label {
+  color: black;
+  margin-left: 48%;
+}
+
+.input-container button {
+  width: auto; /* רוחב הכפתור יתאים אוטומטית לגודל התוכן */
+  margin-left: 25%;
+}
+.input-container input:focus {
+  border-color: #007bff; /* צבע המסגרת כאשר ה-input ב-focus */
+}
+.form3
+{
+  margin-left: 40%;
+  border-radius: 20px;
+  color: brown; /* צבע טקסט לבן */
+  padding: 10px 20px; /* מרווח פנימי */
+  border: none; /* הסרת קו גבול */
+  cursor: pointer; /* הצגת סמל עכבר כתצוגת יד לחיצה */
+}
+.form4
+{
+  margin-right: 20%;
+  border-radius: 20px;
+  color: brown; /* צבע טקסט לבן */
+  padding: 10px 20px; /* מרווח פנימי */
+  border: none; /* הסרת קו גבול */
+  cursor: pointer; /* הצגת סמל עכבר כתצוגת יד לחיצה */
+}
+
+

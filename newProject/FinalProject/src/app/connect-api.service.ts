@@ -8,7 +8,6 @@ import { EditRecipeComponent } from './edit-recipe/edit-recipe.component'
 import { RegisterComponent } from './register/register.component'
 import { Observable } from 'rxjs';
 import { User } from './models/user.model';
-import { Register } from './models/register.model';
 import { Recipe } from './models/recipe.model';
 import { Category } from './models/category.model';
 

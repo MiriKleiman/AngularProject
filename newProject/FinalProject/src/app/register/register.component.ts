@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ConnectApiService } from '../connect-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Register } from '../models/register.model';
 import { CommonModule } from '@angular/common';
 import { User } from '../models/user.model';
 import { UserServiceService } from '../user-service.service';
@@ -37,10 +36,6 @@ export class RegisterComponent implements OnInit {
       // this.count+=1
 
     });
-
-
-    // this.route.params.subscribe()
-  //  recipee:Recipe
   }
   register() {
     if(!this.DetailsForm.valid)
@@ -58,7 +53,6 @@ export class RegisterComponent implements OnInit {
           alert("נרשמת בהצלחה")
           sessionStorage.setItem("id",(this.DetailsForm.value.id).toString());
           this.router.navigate(["all-recipes"])
-          // this.response=response
 
         }
       }

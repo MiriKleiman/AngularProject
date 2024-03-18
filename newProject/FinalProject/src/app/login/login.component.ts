@@ -31,16 +31,11 @@ export class LoginComponent {
   }
 
   login(){
-    // const sessionData = JSON.parse(sessionStorage.getItem('sessionData')) || [];
-    // const sessionDataString = sessionStorage.getItem('sessionData');
-    // const sessionData = sessionDataString ? JSON.parse(sessionDataString) : [];
   this.connectApiService.login(this.UserDetailsForm.value as User).subscribe(
   {
   error: (err) =>{
     this.res="לא רשום"
     ,this.router.navigate(["register",this.res])
-  // sessionData.unshift(this.UserDetailsForm.value.password, JSON.stringify(this.UserDetailsForm.value.userName))
-  // ,sessionStorage.setItem('sessionData', JSON.stringify(sessionData));
   },
   next: (response) => {
     if(response)
@@ -52,9 +47,6 @@ export class LoginComponent {
 
     console.log(this.UserDetailsForm.value.password)
 
-    // if(!response)
-    // alert(response)
-    // this.router.navigate(["all-recipes"])
     console.log("תוכן התשובה:", response);}
     else{
       this.cnt=this.cnt+1;

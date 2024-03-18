@@ -4,7 +4,6 @@ import { ConnectApiService } from '../connect-api.service';
 import { AddRecipeComponent } from '../add-recipe/add-recipe.component';
 import { AllRecipesComponent } from '../all-recipes/all-recipes.component';
 import { LoginComponent } from '../login/login.component';
-// import { ConnectApiService } from '../logout';
 
 @Component({
   selector: 'app-top-bar',

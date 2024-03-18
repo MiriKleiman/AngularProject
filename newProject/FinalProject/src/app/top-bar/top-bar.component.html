@@ -1,9 +1,27 @@
-<div>
-<button (click)="post()">להוספת מתכון</button>
-<!-- <button (click)="look()">לחיפוש מתכון</button> -->
-<button (click)="see()">לצפייה במתכונים</button>
-<button (click)="login()">login</button>
-<button (click)="logout()">logout</button>
-<button (click)="register()">להרשמה</button>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+   <br><br>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" class="poin">
+          <a class="nav-link active" aria-current="page" (click)="post()">להוספת מתכון</a>
+        </li>
+        <li class="nav-item" class="poin">
+          <a class="nav-link active" aria-current="page" (click)="see()">לצפייה במתכונים</a>
 
-</div>
+      </ul>
+      <form class="d-flex" >
+        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" class="poin">
+        <a class="nav-link active" aria-current="page" (click)="login()">login</a>
+      </li>
+      <li class="nav-item" class="poin" >
+        <a class="nav-link active" aria-current="page" (click)="register()">להרשמה</a>
+      </li></ul>
+        <button class="btn btn-outline-success" type="submit" (click)="logout()">logout</button>
+
+      </form>
+    </div><br><br>
+  </div>
+</nav>

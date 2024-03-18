@@ -11,13 +11,7 @@ namespace Project.Controllers
             new User{  Id = 2, UserName = "chani", Adress = "narkis", Email = "c@gmail.com" ,Password = "234" },
             new User{  Id = 3, UserName = "tamar", Adress = "gefen", Email = "t@gmail.com" ,Password = "345" },};
 
-        //[HttpPost]
-        //public void PostUserList([FromBody] User user)
-        //{
-        //    //if (productList.Where(x => x.Id == product.Id && x.Name == product.Name).ToList()!=null)
-        //    userList.Add(user);
-        //    throw new Exception("somthing worng");
-        //}
+    
 
         [Route("login")]
         [HttpPost]

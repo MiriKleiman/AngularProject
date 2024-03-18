@@ -1,159 +1,45 @@
-<!-- <ng-container *ngIf="details" >
-    <div>
-      <h1 >{{details.recipe_name}}</h1>
-      <p>the id of this {{details.recipe_name}} is: {{details.category_code?.name}}
-      <img class="star1" src="{{details.category_code?.routing_to_icon}}" alt="{{details.category_code?.routing_to_icon}}"></p>
-
-      <p>level:</p>
-      <div class="sstar">
-        <div   *ngFor="let i of getRange(details.difficulty_level_1_5)" >
-      <div class="star1"><div class="star"><span >&#9733; </span></div>
-    </div>
-    </div> </div>
-    <h3>Ingredients:</h3>
-          <ul>
-              <li *ngFor="let ingredient of details.the_list_of_components">
-                  {{ ingredient }}
-              </li>
-          </ul>
-          <h3>Preparation:</h3>
-          <ol>
-              <li *ngFor="let step of details.preparation">{{ step }}</li>
-          </ol>
-      <p>the image of this {{details.recipe_name}} is: </p>
-
-      <img src="{{details.image}}" alt="{{details.image}}">
-
-      <button (click)="put()">לעדכון מתכון</button>
-
-        <div *ngIf="tmp3">
-        <button  (click)="deletee()">למחיקת המתכון</button>
-        </div>
-
-
-
-</div> -->
-
-
-
-
-<!-- <div class="container">
-  <div *ngIf="details" class="recipe-details">
-    <h1>{{ details.recipe_name }}</h1>
-    <p>המספר של המתכון הוא: {{ details.category_code?.name }}
-      <img class="icon" src="{{ details.category_code?.routing_to_icon }}" alt="{{ details.category_code?.routing_to_icon }}"></p>
-
-    <p>רמת קושי:</p>
-    <div class="stars">
-      <div *ngFor="let i of getRange(details.difficulty_level_1_5)" class="star">
-        <span>&#9733;</span>
-      </div>
-    </div>
-
-    <h3>רכיבים:</h3>
-    <ul>
-      <li *ngFor="let ingredient of details.the_list_of_components">{{ ingredient }}</li>
-    </ul>
-
-    <h3>אופן ההכנה:</h3>
-    <ol>
-      <li *ngFor="let step of details.preparation">{{ step }}</li>
-    </ol>
-
-    <p>תמונת המתכון:</p>
-    <img src="{{ details.image }}" alt="{{ details.image }}">
-
-    <button class="btn btn-primary" (click)="put()">עדכון מתכון</button>
-
-    <div *ngIf="tmp3">
-      <button class="btn btn-danger" (click)="deletee()">מחיקת המתכון</button>
-    </div>
-  </div>
-</div> -->
-
-
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Details</title>
-    <!-- <link href="styles.css" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
-
-</head>
-<body>
-    <div class="container">
-        <div *ngIf="details" class="recipe-details">
-            <h1 class="title">{{ details.recipe_name }}</h1>
-            <p class="description">המתכון מספר: {{ details.category_code?.name }}
-                <img class="icon" src="{{ details.category_code?.routing_to_icon }}" alt="{{ details.category_code?.routing_to_icon }}">
-            </p>
-
-            <div class="rating">
-                <span class="label">רמת קושי:</span>
-                <div class="stars">
-                    <span *ngFor="let i of getRange(details.difficulty_level_1_5)" class="star">&#9733;</span>
-                </div>
-            </div>
-
-            <h3 class="section-title">רכיבים:</h3>
-            <ul class="ingredients-list">
-                <li *ngFor="let ingredient of details.the_list_of_components" class="ingredient">{{ ingredient }}</li>
-            </ul>
-
-            <h3 class="section-title">אופן ההכנה:</h3>
-            <ol class="preparation-steps">
-                <li *ngFor="let step of details.preparation" class="step">{{ step }}</li>
-            </ol>
-
-            <p class="description">תמונת המתכון:</p>
-            <img src="{{ details.image }}" alt="{{ details.image }}" class="recipe-image">
-
-            <button class="btn update-btn" (click)="put()">עדכון מתכון</button>
-
-            <div *ngIf="tmp3">
-                <button class="btn delete-btn" (click)="deletee()">מחיקת המתכון</button>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
-<!-- </body> -->
-<!-- </html> -->
-<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <div class="container">
   <div *ngIf="details" class="recipe-details">
-    <h1>{{ details.recipe_name }}</h1>
-    <p>המספר של המתכון הוא: {{ details.category_code?.name }}
-      <img class="icon" src="{{ details.category_code?.routing_to_icon }}" alt="{{ details.category_code?.routing_to_icon }}"></p>
+    <div class="header">
+      <div class="icon-container">
+      <h1>{{ details.recipe_name }}</h1>
 
-    <p>רמת קושי:</p>
-    <div class="stars">
-      <div *ngFor="let i of getRange(details.difficulty_level_1_5)" class="star">
-        <span>&#9733;</span>
+        <img class="icon" src="{{ details.category_code?.routing_to_icon }}" alt="{{ details.category_code?.routing_to_icon }}">
+      </div>
+    </div>
+    <div class="info">
+      <!-- <p>המספר של המתכון הוא: {{ details.category_code?.name }}</p> -->
+      <div class="difficulty">
+        <!-- <p>רמת קושי:</p> -->
+        <div class="stars">
+          <div *ngFor="let i of getRange(details.difficulty_level_1_5)" class="star">
+            <span>&#9733;</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <h3>רכיבים:</h3>
-    <ul>
-      <li *ngFor="let ingredient of details.the_list_of_components">{{ ingredient }}</li>
-    </ul>
-
-    <h3>אופן ההכנה:</h3>
-    <ol>
-      <li *ngFor="let step of details.preparation">{{ step }}</li>
-    </ol>
-
-    <p>תמונת המתכון:</p>
-    <img src="{{ details.image }}" alt="{{ details.image }}">
-
-    <button class="btn btn-primary" (click)="put()">עדכון מתכון</button>
-
-    <div *ngIf="tmp3">
-      <button class="btn btn-danger" (click)="deletee()">מחיקת המתכון</button>
+    <div class="ingredients">
+      <h3>רכיבים:</h3>
+      <ul>
+        <li *ngFor="let ingredient of details.the_list_of_components">{{ ingredient }}</li>
+      </ul>
     </div>
+
+    <div class="preparation">
+      <h3>אופן ההכנה:</h3>
+      <ol>
+        <li *ngFor="let step of details.preparation">{{ step }}</li>
+      </ol>
+    </div>
+
+    <div class="image-container">
+      <!-- <p>תמונת המתכון:</p> -->
+      <img class="big-image" src="{{ details.image }}" alt="{{ details.image }}">
+    </div>
+
+    <button class="btn-btn-primary" (click)="put()">עדכון מתכון</button>
+      <button *ngIf="tmp3" class="btn-btn-danger" (click)="deletee()">מחיקת המתכון</button>
+
   </div>
-</div> -->
+</div>

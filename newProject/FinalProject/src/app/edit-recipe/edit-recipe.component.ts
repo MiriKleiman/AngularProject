@@ -79,18 +79,7 @@ export class EditRecipeComponent implements OnInit {
         }
         console.log(this.preparation)
         console.log(this.the_list_of_components)
-        // this.DetailsForm.controls["recipe_name"].setValue(this.edit.recipe_name)
-        // this.DetailsForm.controls["category_code"].setValue(this.edit.category_code)
-        // this.DetailsForm.controls["preparation_time_in_minutes"].setValue(this.edit.preparation_time_in_minutes)
-        // this.DetailsForm.controls["difficulty_level_1_5"].setValue(this.edit.difficulty_level_1_5)
-        // this.DetailsForm.controls["image"].setValue(this.edit.image)
-        // this.DetailsForm.controls["Recipe_name"].setValue(this.edit.recipe_name)
-        // this.edit.preparation?.forEach(item => {
-        //   this.preparationArray.push(new FormControl(""))
-        // });
-        // this.edit.the_list_of_components?.forEach(item => {
-        //   this.componentsArray.push(new FormControl(""))
-        // });
+
 
       },
       error: (err) => {
@@ -100,18 +89,12 @@ export class EditRecipeComponent implements OnInit {
   }
   keep() {
 
-    // this.edit.recipe_name = this.DetailsForm.controls["recipe_name"].value;
-    // this.edit.recipe_name = this.DetailsForm.controls["category_code"].value;
-    // this.edit.recipe_name = this.DetailsForm.controls["preparation_time_in_minutes"].value;
-    // this.edit.recipe_name = this.DetailsForm.controls["difficulty_level_1_5"].value;
-    // this.edit.recipe_name = this.DetailsForm.controls["image"].value;
-    // this.edit.preparation = this.preparationArray.value;
-    // this.edit.the_list_of_components = this.componentsArray.value;
 if(this.DetailsForm.invalid)
 {
-  alert("שדות חובה")
+  console.log(this.DetailsForm.value)
+  // alert("שדות חובה")
 }
-else{
+{
 
     this.connectApiService.putRecipe(this.DetailsForm.value).subscribe(
       {
@@ -130,7 +113,6 @@ else{
 
 }
   cancel() {
-    // <app-small-recipe [recipee]=this.recipe></app-small-recipe>
     this.router.navigate(["all-recipes"])
   }
 

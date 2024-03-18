@@ -1,18 +1,3 @@
-<!-- <p *ngIf="reg">משתמש לא רשום בבקשה הרשם</p>
-<div *ngIf="response">
-  <p>המשתמש כבר קיים!</p>
-</div>
-<div [formGroup]="DetailsForm">
-  <input type="text" formControlName="userName" placeholder="userName" >
-  <input type="text" formControlName="adress" placeholder="adress">
-  <input type="text" formControlName="email" placeholder="email">
-  <ng-container *ngIf=" this.DetailsForm.controls['email'].errors as idError  ">
-    <p *ngIf="idError['minlength']" > this field is must at least 11 digits</p>
-</ng-container>
-  <input type="password" formControlName="password" placeholder="password">
-  <button type="submit" (click)="register()">הרשם</button>
-</div> -->
-
 <div class="register-container">
   <p *ngIf="reg">משתמש לא רשום בבקשה הרשם</p>
   <div *ngIf="response">

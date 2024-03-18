@@ -47,7 +47,6 @@ constructor(private connectApiService:ConnectApiService,
       error:(err)=>{
       }
     })
-// console.log(this.details.user_code_that_entered_the_recipe.userName,this.details.user_code_that_entered_the_recipe.password)
   }
 
   put():void{

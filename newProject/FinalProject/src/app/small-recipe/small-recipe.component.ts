@@ -30,21 +30,9 @@ export class SmallRecipeComponent implements OnInit {
   console.log(this.recipee.recipe_code ,this.recipee.the_list_of_components,"recipeCode")}
   else
   alert("עליך לבצע כניסה לאתר כדי לראות את הפרטים")
-    // <app-recipe-details></app-recipe-details>
   }
 
   ngOnInit(): void {
-    // this.route.params.subscribe((param) => {
-    //   this.recipeId = param['id']
-      // this.connectApiService.getRecipeList().subscribe({
-      //   next: () => {
-      //     // console.log(res);
-      //     // this.product = res
-      //   },
-      //   error: () => {
-      //     // console.log(err);
-      //   }
-      // })
   }
 
 

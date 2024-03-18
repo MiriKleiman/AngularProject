@@ -1,63 +1,67 @@
-/* .container {
+.filter-form {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  margin-right: 10px;
-} */
-
-/* 
-.container {
-  margin: 20px auto;
-  width: 80%;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250, 1fr));
-  grid-gap: 20px;
-}
-
-button {
-  margin-top: 20px;
-} */
-
-
-.container {
-  margin: 20px auto;
-  width: 80%;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px;
-}
-
-.item {
   padding: 20px;
   background-color: #f0f0f0;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.button-container {
-  display: flex;
-  justify-content: center;
+.form-group {
+  margin-bottom: 10px;
 }
 
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border: none;
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
+
+input[type="number"] {
+  width: 100px;
 }
 
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+@media screen and (max-width: 768px) {
+
+
+  .filter-form {
+    display: flex;
+    justify-content: center; /* ממרכז את האיברים באמצע */
+    align-items: center; /* ממרכז את הטקסט אנכית */
+    /* direction: ltr; */
   }
+
+  .filter {
+    flex: 1;
+  }
+
+  label {
+    text-align: center; /* ממרכז את הטקסט באופן אופקי */
+  }
+}
+
+.filter-form {
+  display: flex;
+  justify-content: center; /* ממרכז את האיברים באמצע */
+  align-items: center; /* ממרכז את הטקסט אנכית */
+}
+
+.form-group {
+  flex-grow: 1; /* הפעלת גמישות על כל ה- form-group */
+  /* margin-right: 80%; */
+}
+
+.filter {
+  width: 7cm; /* גודל ה- input ב- 7 סנטימטר */
+  margin: 0 2rem; /* רווח של 4 סנטימטרים בין ה- input */
+}
+
+label {
+  direction: rtl;
+  text-align: center; /* ממרכז את הטקסט באופן אופקי */
+  margin-left: 40px;
+}
+
+.sin{
+  direction: ltr;
+  font-size: 1.5em; /* גודל הכתב */
+  font-family: Arial, sans-serif; /* סוג הכתב */
+  /* margin-right: 20%; */
 }

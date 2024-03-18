@@ -1,0 +1,8 @@
+.poin:hover{
+  cursor: pointer;
+}
+.container-fluid{
+  position: fixed;
+  margin-top: 24px;
+background-color: rgb(252, 227, 227);
+}

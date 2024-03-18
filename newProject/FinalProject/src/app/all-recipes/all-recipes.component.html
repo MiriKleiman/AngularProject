@@ -1,17 +1,32 @@
-<!-- <div class="container" >
-  <div *ngFor="let recipe of recipeList" style="width: 18rem;" >
-  <app-small-recipe [recipee]="recipe"></app-small-recipe>
+<div [formGroup]="filterForm" class="filter-form">
+  <div class="form-group">
+    <label class="sin" for="categoryId">Filter the recipes by:</label>
+  </div>
+  <div class="form-group">
+    <label  for="categoryId">סוג:</label>
+    <select class="form-control filter" id="categoryId" formControlName="categoryId">
+      <option disabled selected>Select</option>
+      <option *ngFor="let category of categoryList" [value]="category.id">{{category.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="name">שם:</label>
+    <input class="form-control filter" id="name" formControlName="name">
+  </div>
+  <div class="form-group">
+    <label for="durinigTimeOfPreparation">זמן הכנה:</label>
+    <input class="form-control filter" formControlName="durinigTimeOfPreparation" type="number">
+  </div>
 </div>
-<button (click)="add()">להוספת מתכון חדש</button>
-</div> -->
-
-
 
 <div class="container">
-  <div class="grid">
-    <ng-container *ngFor="let recipe of recipeList">
-      <app-small-recipe [recipee]="recipe"></app-small-recipe>
-    </ng-container>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let recipe of recipesListByFilter">
+      <div class="recipe-card">
+        <app-small-recipe [recipee]="recipe"></app-small-recipe>
+      </div>
+    </div>
   </div>
-  <button (click)="add()">להוספת מתכון חדש</button>
+
+  <button class="btn btn-primary" (click)="add()">להוספת מתכון חדש</button> <br><br>
 </div>
